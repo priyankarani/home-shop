@@ -11,3 +11,4 @@
 .submodule-init
 virtualenv
 build
+.DS_Store
