@@ -1,0 +1,14 @@
+<div class="container"> 
+  <div class="card-deck">
+    {% for product in products %}
+    <div class="card bg-primary">
+      <img class="card-img-top" src="{{ product.image.url }}" alt="Card image" style="width:100%">
+        <div class="card-body text-center">
+          <h4 class="card-title">{{product.name}}</h4>
+          <p class="card-text">{{product.price}}</p>
+          <a href="#" class="btn btn-primary stretched-link"></a>
+        </div>
+    </div>
+    {% endfor %}  
+  </div>
+</div>

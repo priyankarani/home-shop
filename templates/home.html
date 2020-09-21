@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<main>
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+        {% include "sidebar.html" %}
+    
+
+        <div id="content">
+          {% include "navbar.html" %}
+
+                      {% include "carousel.html" %}
+            {% include "products.html" %}
+         
+  
+        </div>
+  </main>
+ {% endblock content %}
+
+
+

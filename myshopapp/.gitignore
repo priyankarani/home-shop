@@ -1,0 +1,13 @@
+*.log
+*.pot
+*.pyc
+*.retry
+.*.swp
+.*.swo
+.DS_Store
+.project
+.pydevproject
+.migrated
+.submodule-init
+virtualenv
+build
