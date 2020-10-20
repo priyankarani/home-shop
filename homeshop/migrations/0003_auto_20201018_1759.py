@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('myshopapp', '0002_auto_20200921_2241'),
+        ('homeshop', '0002_auto_20200921_2241'),
     ]
 
     operations = [
@@ -27,6 +27,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='product',
             name='category',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='myshopapp.category'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='homeshop.category'),
         ),
     ]

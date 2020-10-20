@@ -1,4 +1,4 @@
-from myshopapp.models import Product, Category 
+from homeshop.models import Product, Category 
 from django.views.generic.list import ListView
 
 
