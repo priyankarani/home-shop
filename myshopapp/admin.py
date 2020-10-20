@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
-from .models import Product, ProductOrder, Order, Payment, Address
+from .models import Product, ProductOrder, Order, Payment, Address, Category
 
 
 
@@ -30,7 +30,7 @@ class AddressAdmin(admin.ModelAdmin):
     list_filter = ['use_as_default', 'address_type', 'country']
     search_fields = ['user', 'street_address', 'apartment_number', 'zip']
 
-
+admin.site.register(Category)
 admin.site.register(Product)
 admin.site.register(ProductOrder)
 admin.site.register(Order, OrderAdmin)

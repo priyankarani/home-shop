@@ -27,18 +27,26 @@ PAYMENT_CHOICES = (
     ('cash', 'Cash'),
 )
 
+class Category(models.Model):
+    name = models.CharField(max_length=30)
+    description = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.name
+
 
 class Product(models.Model):
     name = models.CharField(max_length=30)
     description = models.CharField(max_length=256)
     slug = models.SlugField()
-    category = models.CharField(choices=CATEGORY_CHOICES, max_length=2)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     discount_price = models.FloatField(blank=True, null=True)
     price = models.FloatField()
-    description = models.TextField()
     image = models.ImageField(upload_to='upload/')
     active = models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.name
 
 class ProductOrder(models.Model):
     user = models.ForeignKey(

@@ -1,15 +1,5 @@
-from myshopapp.models import Product 
+from myshopapp.models import Product, Category 
 from django.views.generic.list import ListView
-
-
-def products(request):
-    """
-    Render all the products
-    """
-    context = {
-        'products': Product.objects.all()
-    }
-    return render(request, "products.html", context)
 
 
 class HomeView(ListView):
@@ -19,5 +9,17 @@ class HomeView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['products'] = Product.objects.all()
+
+        context['categories'] = Category.objects.all()
+ 
+        query = self.request.GET.get('q')
+        category = self.request.GET.get('category')
+        if query:
+            context['products'] = self.model.objects.filter(name__icontains=query)
+        elif category:
+            context['products'] = self.model.objects.filter(category__name=category)
+
+        else:
+            context['products'] = self.model.objects.all()
+
         return context

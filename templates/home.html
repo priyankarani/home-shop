@@ -7,16 +7,18 @@
 
         <!-- Sidebar -->
         {% include "sidebar.html" %}
-    
-
+  
         <div id="content">
           {% include "navbar.html" %}
 
-                      {% include "carousel.html" %}
+            {% if not request.GET %}
+              {% include "carousel.html" %}
+            {% endif %}
+
             {% include "products.html" %}
-         
   
         </div>
+    </div>
   </main>
  {% endblock content %}
 

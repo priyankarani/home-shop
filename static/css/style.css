@@ -2,6 +2,9 @@
     ADDITIONAL DEMO STYLE, NOT IMPORTANT TO MAKE THINGS WORK BUT TO MAKE IT A BIT NICER :)
 */
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import "bootstrap";
+
+
 
 @media (max-width: 768px) {
     #sidebar {
